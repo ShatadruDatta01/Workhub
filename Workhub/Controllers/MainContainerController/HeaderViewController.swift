@@ -27,7 +27,7 @@ class HeaderViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
+    //.........
     func isShowNavBar(isShow: Bool) {
         if isShow == true {
             NavigationHelper.helper.mainContainerViewController!.headerHeightConstraint.constant = DeviceType.IS_IPAD ? 74.0 : 64.0
