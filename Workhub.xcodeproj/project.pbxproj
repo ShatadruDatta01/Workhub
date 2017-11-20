@@ -48,6 +48,7 @@
 		C34E1D2E1FBD8F8100CE777C /* SlideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34E1D281FBD8F8100CE777C /* SlideMenuController.swift */; };
 		C34E1D321FBD92FE00CE777C /* HTTPManagerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34E1D311FBD92FE00CE777C /* HTTPManagerAPI.swift */; };
 		C34E1D341FBD939A00CE777C /* WebAPIs.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34E1D331FBD939A00CE777C /* WebAPIs.swift */; };
+		C361536D1FC2E2DD001273BA /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C361536C1FC2E2DD001273BA /* LoginController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +123,7 @@
 		C34E1D291FBD8F8100CE777C /* SlideMenuControllerSwift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideMenuControllerSwift.h; sourceTree = "<group>"; };
 		C34E1D311FBD92FE00CE777C /* HTTPManagerAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPManagerAPI.swift; sourceTree = "<group>"; };
 		C34E1D331FBD939A00CE777C /* WebAPIs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebAPIs.swift; sourceTree = "<group>"; };
+		C361536C1FC2E2DD001273BA /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		D2AA615F83C0D68610281CFF /* Pods-WorkhubUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkhubUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WorkhubUITests/Pods-WorkhubUITests.release.xcconfig"; sourceTree = "<group>"; };
 		F2DA77DCA43C53210EA7A468 /* Pods-WorkhubUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkhubUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WorkhubUITests/Pods-WorkhubUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		FD6664B522DFBE4CC1539ED2 /* Pods_WorkhubUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WorkhubUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -366,6 +368,7 @@
 		C34E1D0C1FBD7E3200CE777C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C361536B1FC2E2AC001273BA /* LoginController */,
 				5FCE5AFE1FC05F1100F299B9 /* ForgotPasswordController */,
 				5FCE5AF51FC0450D00F299B9 /* MainContainerController */,
 			);
@@ -504,6 +507,14 @@
 			name = Main;
 			sourceTree = "<group>";
 		};
+		C361536B1FC2E2AC001273BA /* LoginController */ = {
+			isa = PBXGroup;
+			children = (
+				C361536C1FC2E2DD001273BA /* LoginController.swift */,
+			);
+			path = LoginController;
+			sourceTree = "<group>";
+		};
 		C7083C32D96462BA9007B2AD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -591,6 +602,7 @@
 				TargetAttributes = {
 					C34E1CD41FBD7D5300CE777C = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = EN9RPNK9ZN;
 						ProvisioningStyle = Automatic;
 					};
 					C34E1CEB1FBD7D5400CE777C = {
@@ -826,6 +838,7 @@
 				5FCE5B2A1FC098BA00F299B9 /* ResponseHandler.swift in Sources */,
 				5FCE5B281FC0638100F299B9 /* Workhub.xcdatamodeld in Sources */,
 				5FCE5B1F1FC05F7400F299B9 /* NavigationHelper.swift in Sources */,
+				C361536D1FC2E2DD001273BA /* LoginController.swift in Sources */,
 				5FCE5B341FC09AC900F299B9 /* NSData+Base64.m in Sources */,
 				5FCE5B151FC05F7400F299B9 /* BaseTableViewCell.swift in Sources */,
 				C34E1D1F1FBD8F1200CE777C /* UIDevice+Extra.swift in Sources */,
@@ -939,12 +952,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/shatadrudatta/Desktop/WorkHub/SourceCode/Workhub/Workhub/Workhub-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Workhub/Workhub-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -985,10 +998,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/shatadrudatta/Desktop/WorkHub/SourceCode/Workhub/Workhub/Workhub-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Workhub/Workhub-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -1000,7 +1013,9 @@
 			baseConfigurationReference = 7882F8519B53277FD29469EE /* Pods-Workhub.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = EN9RPNK9ZN;
 				INFOPLIST_FILE = Workhub/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Sociosquares.Workhub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1013,7 +1028,9 @@
 			baseConfigurationReference = 233D5B73EDE728106A1560EC /* Pods-Workhub.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = EN9RPNK9ZN;
 				INFOPLIST_FILE = Workhub/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Sociosquares.Workhub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
