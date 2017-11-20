@@ -127,6 +127,7 @@ func FIRST_WINDOW() -> AnyObject? {
     return UIApplication.shared.windows.first!
 }
 
+@available(iOS 10.0, *)
 func APP_DELEGATE() -> AppDelegate? {
     return UIApplication.shared.delegate as? AppDelegate
 }
