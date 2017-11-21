@@ -18,7 +18,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        self.pushToDashboard()
         return true
+    }
+    
+    func pushToDashboard() {
+        let mainViewController = mainStoryboard.instantiateViewController(withIdentifier: "MainNavigationController") as! UINavigationController
+        NavigationHelper.helper.navController = mainViewController
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

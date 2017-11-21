@@ -23,9 +23,18 @@ class LoginController: BaseViewController {
         
         self.viewPassword.layer.borderWidth = 1.0
         self.viewPassword.layer.borderColor = UIColorRGB(r: 200.0, g: 200.0, b: 200.0)?.cgColor
+        
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NavigationHelper.helper.headerViewController?.isShowNavBar(isShow: false)
+    }
+    
+    @IBAction func actionBack(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
     
     /// Facebook SignIn
     ///
@@ -53,5 +62,7 @@ class LoginController: BaseViewController {
     ///
     /// - Parameter sender: Button
     @IBAction func btnForgotPassword(_ sender: UIButton) {
+        let forgotPasswordPageVC = mainStoryboard.instantiateViewController(withIdentifier: "ForgotPasswordController") as! ForgotPasswordController
+        NavigationHelper.helper.contentNavController!.pushViewController(forgotPasswordPageVC, animated: true)
     }
 }

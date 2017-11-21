@@ -12,13 +12,10 @@ class HeaderViewController: UIViewController {
 
     var isBack = false
     @IBOutlet weak var leftButton: UIButton!
-    @IBOutlet weak var rightButton: UIButton!
-    @IBOutlet weak var labelTitleText: UILabel!
-    @IBOutlet weak var labelNotify: UILabel!
+    @IBOutlet weak var imgTitleContent: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
         NavigationHelper.helper.headerViewController = self
-        self.labelNotify.layer.cornerRadius = DeviceType.IS_IPAD ? 10.0 : 8.0
         // Do any additional setup after loading the view.
     }
 

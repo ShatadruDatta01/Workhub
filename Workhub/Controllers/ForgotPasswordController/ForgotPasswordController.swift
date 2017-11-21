@@ -20,6 +20,9 @@ class ForgotPasswordController: BaseViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func actionBack(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
     
     @IBAction func actionSubmit(_ sender: UIButton) {
         self.presentAlertWithTitle(title: "WorkHub", message: "Work Under progress")
