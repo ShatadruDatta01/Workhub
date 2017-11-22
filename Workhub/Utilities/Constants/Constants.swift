@@ -140,6 +140,41 @@ func PRIMARY_FONT(size: CGFloat) -> UIFont? {
     return UIFont(name: FONT_NAME, size: size)
 }
 
+struct GlobalMethods {
+    
+    /// The method is used to store value in userdefaults
+    ///
+    /// - Parameters:
+    ///   - key: The key name for defaults
+    ///   - value: The value of the ket Passed
+    static func storeInDefaults (key: String, value: String){
+        
+        UserDefaults.standard.set(value, forKey:key)
+        UserDefaults.standard.synchronize()
+    }
+    
+    /// The method is used ato retrieve value of the saved keys in Userdefaults and if not found it returns a blank string
+    ///
+    /// - Parameter keyName: The key saved in the defaults
+    /// - Returns: The value is returned for the key
+    static func getFromDefaultsFor(keyName: String) ->String{
+        let returnValue:String! = UserDefaults.standard.object(forKey: keyName) != nil ? UserDefaults.standard.object(forKey: keyName) as? String : ""
+        return returnValue
+    }
+    
+    /// The method returns the comapny access token and comapny cid
+    static var getCompanyCidAndCompanyAccesstoken = {(comapnyAccessToken: String) -> (accessToken: String, cid: String) in
+        let base64UserStr = NSString(format: "%@%@", comapnyAccessToken,"==") as String
+        let decodedData = NSData(base64Encoded: base64UserStr, options: NSData.Base64DecodingOptions.init(rawValue: 0))
+        let decodedString = NSString(data: decodedData! as Data, encoding: String.Encoding.utf8.rawValue)
+        let  base64String = decodedString?.components(separatedBy: "-")
+        let  companyAccessToken = base64String?[1]
+        let companyCid = base64String?[2]
+        return (comapnyAccessToken,companyCid!)
+    }
+}
+
+
 //func SECONDARY_FONT(size: CGFloat) -> UIFont? {
 // return UIFont(name: "Roboto-Regular", size: size)!
 //}

@@ -24,7 +24,7 @@ struct AppConstantValues {
     static let VALUE_OAUTH_SIGNATURE_METHOD_TEMP = "HMAC-SHA1";
     static let VALUE_OAUTH_VERSION_TEMP = "1.0";
     
-    static let companyAccessToken = "6d2003577e300fccfd0e4c4be7d7a59366f94bb0";
+    static let companyAccessToken = "fca83adde3f313b49b9ad0d6fb7174413a28a1dc" //"6d2003577e300fccfd0e4c4be7d7a59366f94bb0";
     static let iTunesAppUrl = "https://itunes.apple.com/us/app/brand-champs/id1037140094?ls=1&mt=8"
 
 }
@@ -186,15 +186,16 @@ struct HTTPMANAGERAPI_ALAMOFIRE {
     
     static func POSTManager(_ subPath:String,
                             queue: DispatchQueue? = nil,
-                            parameters:[String: AnyObject]? = nil,
+                            parameters:[String: AnyObject]?,
                             completion: @escaping (_ response: AnyObject,_ responseString:String,_ isSuccess:Bool) -> Void){
         _ = NetworkConnectivity.networkConnectionType("needsConnection")
         queue?.sync {
             
-            let paramDict = ["email":"demo@acu.com","role":"general"]
+            print(parameters!)
+            let paramDict = parameters //["email":"demo@acu.com","role":"general"]
             
             let baseUrlString = subPath//"https://apils.socioadvocacy.com/mobile/login?access_token=6d2003577e300fccfd0e4c4be7d7a59366f94bb0"
-            var header = CREATE_HEADER.createHeaderForTheUrl(baseUrl: baseUrlString, mType: "POST", parameterDict: paramDict, companyCid: "", accessToken: AppConstantValues.companyAccessToken)
+            var header = CREATE_HEADER.createHeaderForTheUrl(baseUrl: baseUrlString, mType: "POST", parameterDict: paramDict! as! [String : String], companyCid: "", accessToken: AppConstantValues.companyAccessToken)
             
             header = header.replacingOccurrences(of: "%27", with: "'")
             header = header.replacingOccurrences(of: "%0A", with: "")
@@ -293,7 +294,7 @@ struct CREATE_HEADER {
         baseString = baseString.replacingOccurrences(of: "%40", with: "%2540")
         baseString = baseString.replacingOccurrences(of: "%252520", with: "%2520")
         let instanceOfCustomObject: Helper = Helper()
-        let compositeKey =  instanceOfCustomObject.buidCompositeKey("", aToken: "6d2003577e300fccfd0e4c4be7d7a59366f94bb0")!
+        let compositeKey =  instanceOfCustomObject.buidCompositeKey("", aToken: "fca83adde3f313b49b9ad0d6fb7174413a28a1dc")!
         let compositeSignature = instanceOfCustomObject.computeSignature(baseString, key: compositeKey)!
         
         let currentdate =  instanceOfCustomObject.generateCurrentTime()!
