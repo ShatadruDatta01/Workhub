@@ -294,7 +294,7 @@ struct CREATE_HEADER {
         baseString = baseString.replacingOccurrences(of: "%40", with: "%2540")
         baseString = baseString.replacingOccurrences(of: "%252520", with: "%2520")
         let instanceOfCustomObject: Helper = Helper()
-        let compositeKey =  instanceOfCustomObject.buidCompositeKey("", aToken: "fca83adde3f313b49b9ad0d6fb7174413a28a1dc")!
+        let compositeKey =  instanceOfCustomObject.buidCompositeKey("", aToken: AppConstantValues.companyAccessToken)!
         let compositeSignature = instanceOfCustomObject.computeSignature(baseString, key: compositeKey)!
         
         let currentdate =  instanceOfCustomObject.generateCurrentTime()!
