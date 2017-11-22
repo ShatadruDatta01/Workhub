@@ -16,6 +16,8 @@ struct AppWebservices {
     static let GET_APPCONFIG_FILES = "appconfig.json?"
     static let MOBILE_LOGIN = "mobile/login?"
     static let USER_UID     = "user/uid?"
+    
+    static let LOGIN = "login?"
 
     
 }
